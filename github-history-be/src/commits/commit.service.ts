@@ -3,6 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { AxiosResponse } from 'axios';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
+import { GithubResponseDTO } from './dto/github-response.dto';
 
 @Injectable()
 export class CommitsService {
@@ -13,7 +14,7 @@ export class CommitsService {
     private httpService: HttpService,
   ) {}
 
-  findAll(owner: string, name: string): Observable<AxiosResponse<any, any>> {
+  findAll(owner: string, name: string): Observable<AxiosResponse<GithubResponseDTO[]>> {
     const url = `${this.GITHUB_API_BASE}/repos/${owner}/${name}/commits`;
     return this.httpService.get(url);
   }
