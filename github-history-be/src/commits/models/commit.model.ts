@@ -1,7 +1,14 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
+import { Author } from './author.model';
 
 @ObjectType()
 export class Commit {
-  @Field((type) => Int, { nullable: true })
-  id?: number;
+  @Field()
+  sha: string;
+
+  @Field()
+  message: string;
+
+  @Field()
+  author: Author;
 }

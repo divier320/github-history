@@ -2,10 +2,18 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Author {
+  name: String!
+  email: String!
+  avatar_url: String
+}
+
 type Commit {
-  id: Int
+  sha: String!
+  message: String!
+  author: Author!
 }
 
 type Query {
-  commits: [Commit!]!
+  commits(owner: String!, name: String!): [Commit!]!
 }
