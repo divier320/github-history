@@ -14,6 +14,7 @@ export class CommitResolver {
         response.data.map((data) => ({
           sha: data.sha,
           message: data.commit.message,
+          date: data.commit.author.date,
           author: {
             ...data.commit.author,
             avatar_url: data.author.avatar_url,

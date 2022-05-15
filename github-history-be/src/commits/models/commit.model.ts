@@ -10,5 +10,8 @@ export class Commit {
   message: string;
 
   @Field()
+  date: string;
+
+  @Field()
   author: Author;
 }

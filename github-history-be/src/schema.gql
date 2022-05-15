@@ -11,6 +11,7 @@ type Author {
 type Commit {
   sha: String!
   message: String!
+  date: String!
   author: Author!
 }
 

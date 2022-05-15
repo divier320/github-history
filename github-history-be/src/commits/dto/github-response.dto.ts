@@ -12,4 +12,5 @@ export class GithubResponseDTO {
 type Author = {
   name: string;
   email: string;
+  date: string
 };
